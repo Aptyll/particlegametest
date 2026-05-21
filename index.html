@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particle Simulation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Settings Menu -->
+  <div id="settingsMenu" class="ui-panel ui-panel-compact">
+    <div class="panel-header">Particles</div>
+    <div class="stats-grid">
+      <div class="stat-cell">
+        <span class="stat-key">Total</span>
+        <span id="totalParticles" class="stat-val">50</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-key">Time</span>
+        <span id="timerDisplay" class="stat-val">0:00</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-key">Hits</span>
+        <span id="collisionCounter" class="stat-val">0</span>
+      </div>
+      <div class="stat-cell">
+        <span class="stat-key">FPS</span>
+        <span id="fpsDisplay" class="stat-val">60</span>
+      </div>
+      <div class="stat-cell stat-cell-wide">
+        <span class="stat-key">Checkpoints</span>
+        <span id="checkpointDisplay" class="stat-val">0/0</span>
+      </div>
+    </div>
+    <div class="particle-grid">
+      <div class="control-row control-row-compact">
+        <span class="swatch swatch-red" title="Red"></span>
+        <input id="redSlider" class="particle-slider" type="range" min="0" max="500" value="10">
+        <span id="redCounter" class="row-value">10</span>
+      </div>
+      <div class="control-row control-row-compact">
+        <span class="swatch swatch-blue" title="Blue"></span>
+        <input id="blueSlider" class="particle-slider" type="range" min="0" max="500" value="10">
+        <span id="blueCounter" class="row-value">10</span>
+      </div>
+      <div class="control-row control-row-compact">
+        <span class="swatch swatch-lavender" title="Lavender"></span>
+        <input id="lavenderSlider" class="particle-slider" type="range" min="0" max="500" value="10">
+        <span id="lavenderCounter" class="row-value">10</span>
+      </div>
+      <div class="control-row control-row-compact">
+        <span class="swatch swatch-rose" title="Rose"></span>
+        <input id="roseSlider" class="particle-slider" type="range" min="0" max="500" value="10">
+        <span id="roseCounter" class="row-value">10</span>
+      </div>
+      <div class="control-row control-row-compact">
+        <span class="swatch swatch-sage" title="Sage"></span>
+        <input id="sageSlider" class="particle-slider" type="range" min="0" max="500" value="10">
+        <span id="sageCounter" class="row-value">10</span>
+      </div>
+    </div>
+    <div id="menuButtons" class="menu-buttons-compact">
+      <button id="pauseButton" class="panel-button panel-button-compact">Pause</button>
+      <button id="resetButton" class="panel-button panel-button-compact">Reset</button>
+    </div>
+  </div>
+
+  <!-- Physics panel -->
+  <div id="physicsPanel" class="ui-panel">
+    <div class="panel-header">Physics</div>
+    <div class="physics-grid">
+      <div class="control-row">
+        <span class="row-label">Gravity</span>
+        <input id="gravitySlider" class="physics-slider" type="range" min="5" max="150" value="30" step="1">
+        <span id="gravityValue" class="row-value row-value-physics">0.30</span>
+      </div>
+      <div class="control-row">
+        <span class="row-label">Softening</span>
+        <input id="softeningSlider" class="physics-slider" type="range" min="1" max="100" value="10" step="1">
+        <span id="softeningValue" class="row-value row-value-physics">1.0</span>
+      </div>
+      <div class="control-row">
+        <span class="row-label">Spawn Spd</span>
+        <input id="spawnSpeedSlider" class="physics-slider" type="range" min="0" max="40" value="10" step="1">
+        <span id="spawnSpeedValue" class="row-value row-value-physics">1.0</span>
+      </div>
+      <div class="control-row">
+        <span class="row-label">Shatter</span>
+        <input id="shatterSlider" class="physics-slider" type="range" min="5" max="50" value="15" step="1">
+        <span id="shatterValue" class="row-value row-value-physics">15</span>
+      </div>
+      <div class="control-row">
+        <span class="row-label">Sq Bounce</span>
+        <input id="bounceSlider" class="physics-slider" type="range" min="100" max="250" value="130" step="5">
+        <span id="bounceValue" class="row-value row-value-physics">1.30</span>
+      </div>
+      <div class="control-row">
+        <span class="row-label">Sq Speed</span>
+        <input id="squareSpeedSlider" class="physics-slider" type="range" min="50" max="600" value="200" step="10">
+        <span id="squareSpeedValue" class="row-value row-value-physics">200</span>
+      </div>
+      <div class="control-row">
+        <span class="row-label">Hit Limit</span>
+        <input id="hitLimitSlider" class="physics-slider" type="range" min="2" max="20" value="5" step="1">
+        <span id="hitLimitValue" class="row-value row-value-physics">5</span>
+      </div>
+    </div>
+    <button id="resetPhysicsButton" class="panel-button">Reset Physics</button>
+  </div>
+
+  <script src="script.js">
+  </script>
+</body>
+</html>
