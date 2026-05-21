@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Particle Simulation</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=20260521">
 </head>
 <body>
   <canvas id="particleCanvas"></canvas>
 
   <!-- Settings Menu -->
   <div id="settingsMenu" class="ui-panel ui-panel-compact">
-    <div class="panel-header">Particles</div>
+    <div class="panel-header">Particles <span id="buildVersion" class="build-version"></span></div>
     <div class="stats-grid">
       <div class="stat-cell">
         <span class="stat-key">Total</span>
@@ -110,7 +110,7 @@
     <button id="resetPhysicsButton" class="panel-button">Reset Physics</button>
   </div>
 
-  <script src="script.js">
+  <script src="script.js?v=20260521">
   </script>
 </body>
 </html>

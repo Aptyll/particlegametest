@@ -1,4 +1,4 @@
-// Canvas setup — viewport shows a larger world via camera
+const BUILD_VERSION = '20260521';
 const canvas = document.getElementById('particleCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -708,6 +708,11 @@ const timerDisplay = document.getElementById('timerDisplay');
 const collisionCounter = document.getElementById('collisionCounter');
 const fpsDisplay = document.getElementById('fpsDisplay');
 const checkpointDisplay = document.getElementById('checkpointDisplay');
+const buildVersion = document.getElementById('buildVersion');
+
+if (buildVersion) {
+  buildVersion.textContent = `v${BUILD_VERSION}`;
+}
 
 // Function to update collision counter display
 function updateCollisionCounter() {
